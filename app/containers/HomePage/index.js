@@ -72,11 +72,11 @@ export class HomePage extends React.PureComponent {
             </p>
           </CenteredSection>
           <Section>
-            <H2>
+            {/* <H2>
               <FormattedMessage {...messages.trymeHeader} />
-            </H2>
+            </H2> */}
             <Form onSubmit={this.props.onSubmitForm}>
-              <label htmlFor="username">
+              {/* <label htmlFor="username">
                 <FormattedMessage {...messages.trymeMessage} />
                 <AtPrefix>
                   <FormattedMessage {...messages.trymeAtPrefix} />
@@ -88,7 +88,7 @@ export class HomePage extends React.PureComponent {
                   value={this.props.username}
                   onChange={this.props.onChangeUsername}
                 />
-              </label>
+              </label> */}
 
               <Button href="#"
                 onClick={this.props.onSubmitForm}

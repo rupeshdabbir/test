@@ -35,7 +35,7 @@
   "boilerplate.containers.HomePage.start_project.header":
     "Adobe - Lyfire assignment",
   "boilerplate.containers.HomePage.start_project.message":
-    "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+    "Read data from https://jsonplaceholder.typicode.com/posts API and present the data.",
   "boilerplate.containers.HomePage.tryme.atPrefix": "@",
   "boilerplate.containers.HomePage.tryme.header": "Try me!",
   "boilerplate.containers.HomePage.tryme.message":
