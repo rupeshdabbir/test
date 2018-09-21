@@ -16,9 +16,10 @@ import IssueIcon from './IssueIcon';
 import IssueLink from './IssueLink';
 import RepoLink from './RepoLink';
 import Wrapper from './Wrapper';
+import Labeler from './Labeler';
 
 
-export class RepoListItem extends React.PureComponent {
+export class MyListItem extends React.PureComponent {
   render() {
     const { item } = this.props;
     let nameprefix = '';
@@ -45,18 +46,24 @@ export class RepoListItem extends React.PureComponent {
 
     const content = (
       <Wrapper>
-        <label>
-          {nameprefix + item.id}
-        </label>
+        <Labeler>
+          <label>
+            {nameprefix + item.id}
+          </label>
+        </Labeler>
         {/* <RepoLink href="#">
           {nameprefix + item.id}
         </RepoLink> */}
-        <label href="#">
-          {nameprefix + item.title}
-        </label>
+        <Labeler>
+          <label>
+            {nameprefix + item.title}
+          </label>
+        </Labeler>
+        <Labeler>
         <label>
           {nameprefix + item.body}
         </label>
+        </Labeler>
       </Wrapper>
     );
 
@@ -66,7 +73,7 @@ export class RepoListItem extends React.PureComponent {
   }
 }
 
-RepoListItem.propTypes = {
+MyListItem.propTypes = {
   item: PropTypes.object,
   currentUser: PropTypes.string,
 };
@@ -75,4 +82,4 @@ export default connect(
   createStructuredSelector({
     currentUser: makeSelectCurrentUser(),
   }),
-)(RepoListItem);
+)(MyListItem);

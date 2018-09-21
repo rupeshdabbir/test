@@ -2,39 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import List from 'components/List';
-import MyTable from 'components/Table';
+import MyTable from 'components/MyTable';
+import MyList from 'components/MyTable';
 import ListItem from 'components/ListItem';
 import LoadingIndicator from 'components/LoadingIndicator';
 import RepoListItem from 'containers/RepoListItem';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
-
-
-const MuiTable = () => (
-  <Table>
-    <TableHeader>
-      <TableRow>
-        <TableHeaderColumn>ID</TableHeaderColumn>
-        <TableHeaderColumn>Name</TableHeaderColumn>
-        <TableHeaderColumn>Status</TableHeaderColumn>
-      </TableRow>
-    </TableHeader>
-    <TableBody>
-      <TableRow>
-        <TableRowColumn>1</TableRowColumn>
-        <TableRowColumn>sunt aut facere repellat provident occaecati excepturi optio reprehenderit</TableRowColumn>
-        <TableRowColumn>quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto</TableRowColumn>
-      </TableRow>
-    </TableBody>
-  </Table>
-);
+import MyListItem from 'containers/MyListItem';
 
 function ReposList({ loading, error, repos }) {
   if (loading) {
@@ -51,11 +24,7 @@ function ReposList({ loading, error, repos }) {
   // This is where the actual logic for repo happens.
   if (repos !== false) {
     console.log(repos);
-    return <List items={repos} component={RepoListItem} />;
-    // return <MyTable items={repos} component={RepoListItem} />;
-  //   return <MuiThemeProvider>
-  //   <MuiTable />
-  // </MuiThemeProvider>
+    return <List items={repos} component={MyListItem} />;
   }
 
   return null;
