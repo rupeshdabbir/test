@@ -48,7 +48,7 @@ I wanted to spend sometime and add some of my own customizations for the project
 
 
 ## Tests:
-- Each component has their own dummy tests written.
+- Each component has their own tests written. (I've added some mocks as part of internal that I generally use for my personal projects).
 - I've been experimenting with Enzyme for testing React components and their outputs.
 - There are few tests that I can improve but due to time constraint, I was able to only accomplish so much!
 
