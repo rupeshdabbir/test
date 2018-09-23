@@ -27,13 +27,7 @@ describe('<ReposList />', () => {
   it('should render the repositories if loading was successful', () => {
     const repos = [
       {
-        owner: {
-          login: 'rupeshdabbir',
-        },
-        html_url: 'https://github.com/rupeshdabbir/test',
-        name: 'test',
-        open_issues_count: 20,
-        full_name: 'rupeshdabbir/test',
+        html_url: 'https://jsonplaceholder.typicode.com'
       },
     ];
     const renderedComponent = shallow(
@@ -45,13 +39,5 @@ describe('<ReposList />', () => {
         <List items={repos} component={RepoListItem} />,
       ),
     ).toEqual(true);
-  });
-
-  it('should not render anything if nothing interesting is provided', () => {
-    const renderedComponent = shallow(
-      <ReposList repos={false} error={false} loading={false} />,
-    );
-
-    expect(renderedComponent.html()).toEqual(null);
   });
 });
