@@ -36,10 +36,14 @@ I wanted to spend sometime and add some of my own customizations for the project
 2. There's a route for "en" which is the default route of the project.
 3. The project is divided into few components
 
-<App>
-  - <HomePage> component that renders home page.
+* `<App />`
+  
+  * `<HomePage />` component that renders home page.
+
       * This homepage container has MyListItem container which in turn calls.
+  
       * List and ListItem components (Which are indivisual items of the list.)
+  
       * There are loading components, image and H1 tag components as well.
 
 
