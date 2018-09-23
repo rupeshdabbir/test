@@ -21,16 +21,12 @@ import {
 } from 'containers/App/selectors';
 import H2 from 'components/H2';
 import Button from 'components/Button';
-import ReposList from 'components/ReposList';
-import AtPrefix from './AtPrefix';
+import ResultList from 'components/ResultList';
 import CenteredSection from './CenteredSection';
 import Form from './Form';
-import Input from './Input';
 import Section from './Section';
 import messages from './messages';
 import { loadRepos } from '../App/actions';
-import { changeUsername } from './actions';
-import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 
@@ -47,10 +43,10 @@ export class HomePage extends React.PureComponent {
 
   render() {
     const { loading, error, repos } = this.props;
-    const reposListProps = {
+    const resultListProps = {
       loading,
       error,
-      repos,
+      repos
     };
 
     return (
@@ -72,32 +68,14 @@ export class HomePage extends React.PureComponent {
             </p>
           </CenteredSection>
           <Section>
-            {/* <H2>
-              <FormattedMessage {...messages.trymeHeader} />
-            </H2> */}
             <Form onSubmit={this.props.onSubmitForm}>
-              {/* <label htmlFor="username">
-                <FormattedMessage {...messages.trymeMessage} />
-                <AtPrefix>
-                  <FormattedMessage {...messages.trymeAtPrefix} />
-                </AtPrefix>
-                <Input
-                  id="username"
-                  type="text"
-                  placeholder="mxstbr"
-                  value={this.props.username}
-                  onChange={this.props.onChangeUsername}
-                />
-              </label> */}
-
               <Button href="#"
                 onClick={this.props.onSubmitForm}
               >
                 Fetch Data
               </Button>
-              
             </Form>
-            <ReposList {...reposListProps} />
+            <ResultList {...resultListProps} />
           </Section>
         </div>
       </article>
@@ -109,14 +87,11 @@ HomePage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
-  onSubmitForm: PropTypes.func,
-  username: PropTypes.string,
-  onChangeUsername: PropTypes.func
+  onSubmitForm: PropTypes.func
 };
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
     onSubmitForm: evt => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadRepos());
@@ -126,7 +101,6 @@ export function mapDispatchToProps(dispatch) {
 
 const mapStateToProps = createStructuredSelector({
   repos: makeSelectRepos(),
-  username: makeSelectUsername(),
   loading: makeSelectLoading(),
   error: makeSelectError(),
 });
