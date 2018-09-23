@@ -7,24 +7,24 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   startProjectHeader: {
-    id: 'boilerplate.containers.HomePage.start_project.header',
+    id: 'project.containers.HomePage.start_project.header',
     defaultMessage: 'Adobe Assignment for Lyfire team.',
   },
   startProjectMessage: {
-    id: 'boilerplate.containers.HomePage.start_project.message',
+    id: 'project.containers.HomePage.start_project.message',
     defaultMessage:
-      'A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices',
+      'Adobe Assignment for Lyfire team.',
   },
   trymeHeader: {
-    id: 'boilerplate.containers.HomePage.tryme.header',
+    id: 'project.containers.HomePage.tryme.header',
     defaultMessage: 'Try me!',
   },
   trymeMessage: {
-    id: 'boilerplate.containers.HomePage.tryme.message',
-    defaultMessage: 'Displaying information from: ',
+    id: 'project.containers.HomePage.tryme.message',
+    defaultMessage: 'Displaying information from: https://jsonplaceholder.typicode.com/posts API',
   },
 trymeAtPrefix: {
-    id: 'boilerplate.containers.HomePage.tryme.atPrefix',
+    id: 'project.containers.HomePage.tryme.atPrefix',
     defaultMessage: '@',
   },
 });

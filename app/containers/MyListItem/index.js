@@ -8,13 +8,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { FormattedNumber } from 'react-intl';
+// import { FormattedNumber } from 'react-intl';
 
-import { makeSelectCurrentUser } from 'containers/App/selectors';
+// import { makeSelectCurrentUser } from 'containers/App/selectors';
 import ListItem from 'components/ListItem';
-import IssueIcon from './IssueIcon';
-import IssueLink from './IssueLink';
-import RepoLink from './RepoLink';
+// import IssueIcon from './IssueIcon';
+// import IssueLink from './IssueLink';
+// import RepoLink from './RepoLink';
 import Wrapper from './Wrapper';
 import Labeler from './Labeler';
 
@@ -75,11 +75,11 @@ export class MyListItem extends React.PureComponent {
 
 MyListItem.propTypes = {
   item: PropTypes.object,
-  currentUser: PropTypes.string,
+  // currentUser: PropTypes.string,
 };
 
 export default connect(
   createStructuredSelector({
-    currentUser: makeSelectCurrentUser(),
+    // currentUser: makeSelectCurrentUser(),
   }),
 )(MyListItem);
