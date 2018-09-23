@@ -33,7 +33,7 @@ import saga from './saga';
 /* eslint-disable react/prefer-stateless-function */
 export class HomePage extends React.PureComponent {
   /**
-   * when initial state username is not null, submit the form to load repos
+   * when initial state username is not null, submit the form to load page
    */
   componentDidMount() {
     if (this.props.username && this.props.username.trim().length > 0) {
