@@ -2,8 +2,8 @@ const { resolve } = require('path');
 const pullAll = require('lodash/pullAll');
 const uniq = require('lodash/uniq');
 
-const ReactBoilerplate = {
-  // This refers to the react-boilerplate version this project is based on.
+const Reactproject = {
+  // This refers to the react-project version this project is based on.
   version: '3.6.0',
 
   /**
@@ -37,22 +37,22 @@ const ReactBoilerplate = {
       include: ['core-js', 'eventsource-polyfill', 'babel-polyfill', 'lodash'],
 
       // The path where the DLL manifest and bundle will get built
-      path: resolve('../node_modules/react-boilerplate-dlls'),
+      path: resolve('../node_modules/react-project-dlls'),
     },
 
     entry(pkg) {
       const dependencyNames = Object.keys(pkg.dependencies);
       const exclude =
-        pkg.dllPlugin.exclude || ReactBoilerplate.dllPlugin.defaults.exclude;
+        pkg.dllPlugin.exclude || Reactproject.dllPlugin.defaults.exclude;
       const include =
-        pkg.dllPlugin.include || ReactBoilerplate.dllPlugin.defaults.include;
+        pkg.dllPlugin.include || Reactproject.dllPlugin.defaults.include;
       const includeDependencies = uniq(dependencyNames.concat(include));
 
       return {
-        reactBoilerplateDeps: pullAll(includeDependencies, exclude),
+        reactprojectDeps: pullAll(includeDependencies, exclude),
       };
     },
   },
 };
 
-module.exports = ReactBoilerplate;
+module.exports = Reactproject;

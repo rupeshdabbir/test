@@ -7,11 +7,11 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   home: {
-    id: 'boilerplate.components.Header.home',
+    id: 'project.components.Header.home',
   defaultMessage: 'Home - Rupesh',
   },
   features: {
-    id: 'boilerplate.components.Header.features',
+    id: 'project.components.Header.features',
     defaultMessage: 'Fetch Data',
   },
 });
