@@ -23,7 +23,7 @@ describe('<RepoListItem />', () => {
   beforeEach(() => {
     item = {
       owner: {
-        login: 'mxstbr',
+        login: 'rupeshdabbir',
       },
       html_url: 'https://github.com/react-boilerplate/react-boilerplate',
       name: 'react-boilerplate',
